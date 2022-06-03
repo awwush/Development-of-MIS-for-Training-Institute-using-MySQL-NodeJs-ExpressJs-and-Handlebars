@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+body {
+	margin: 0;
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+	background-color: #e7eceb;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+header {
+	background-color: #f9f9f9;
+	width: 100%;
+	height: 72px;
+}
+header img {
+	position: relative;
+	left: 43.48%;
+	top: 0;
+}
+main .main-box {
+	background-color: #f8fafb;
+	width: 82.09%;
+  	height: 626px;
+	margin: 35px auto;
+	display: flex;
+	padding-top: 50px;
+	justify-content: space-evenly;
+}
+main img {
+	margin: auto 0px;
+}
+main .registeration-box {
+	background-color: #f8fafb;
+	display: flex;
+	flex-direction: column;
+	width: 44.66%;
+	height: 73.43%;
+	margin: auto 0px;
+	font-size: 24px;
+	font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+	font-weight: bolder;
+	margin-bottom: 150px;
+	
+}
+main .registeration-box section {
+	display: flex;
+	justify-content: space-between;
+}
+main .registeration-box aside {
+	font-size: 14px;
+}
+main .registeration-box aside p {
+	margin-bottom: 0px;
+	margin-top: 14px;
+}
+main .registeration-box aside span {
+	color: #008ac6;
+}
+
+main .registeration-border {
+	border-bottom: 0.5px solid #827878;
+	width: 92%;
+	margin: 0 auto;
+}
+
+main .registeration-box .registeration-part {
+	background-color: #ebebeb;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	justify-content: space-around;
+	text-align: center;
+	font-size: 18px;
+	padding: 15px 15px;
+}
+main .registeration-box .registeration-part form {
+	flex: 4;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin-bottom: 1;
+	margin-top: 1;
+}
+main .registeration-box .registeration-part form input {
+	margin: auto;
+	width: 88.82%;
+	height: 17%;
+	border-radius: 10px;
+	border: none;
+	color: #767676;
+	background-color: #d7d6d6;
+	text-align: center;
+	font-weight: 600;
+}
+main .registeration-box .registeration-part form div {
+	margin: 6px;
+	height: 55px;
+}
+main .registeration-box .registeration-part form div.container {
+	margin: 15px;
+}
+main .registeration-box .registeration-part form input.short {
+	width: 45%;
+	height: 100%;
+	
+}
+main .registeration-box .registeration-part form input[type="submit"] {
+	background-color: #37a1f6;
+	cursor: pointer;
+	color: #ffffff;
+	height: 16.5%;
+}
+main .registeration-box .registeration-part .division {
+	flex: 0.1;
+	border-bottom: 0.5px solid #827878;
+	width: 95%;
+	margin: 0 auto;
+}
+main .registeration-box .registeration-part button {
+	flex: 0.5;
+	width: 88.82%;
+	font-weight: 900;
+	height: 10%;
+	margin: 20px auto;
+	background-color: #d52626;
+	border: none;
+	border-radius: 10px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+input:focus { 
+	outline-style: solid;
+	outline-color: hsla(206, 100%, 50%, 0.3);
+	outline-width: 3.5px;	
+}
+
+footer {
+	width: 100%;
+	height: 162px;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	font-family: "Ubuntu", sans-serif;
+	color: white;
+}
+footer .frow {
+	display: flex;
+	justify-content: space-evenly;
+}
+footer .fcolumn {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+footer .fcolumn ul {
+	list-style: none;
+	padding: 0;
+	font-size: 12px;
+}
+footer .frow p {
+	font-size: 10px;
+}

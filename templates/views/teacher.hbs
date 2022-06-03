@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {{>bootstrapAndBasicHeader}}
+  <link rel="stylesheet" href="/css/teacher.css" />
+</head>
+
+<body>
+  {{>headers}}
+  <main class="p-4">
+
+    <div class="container-fluid" style="">
+      <div class="rightCircle"></div>
+      <div class="leftCircle"></div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-4">
+          <h3 class="d-flex justify-content-center">Teacher id creation</h3>
+
+
+          <div class="container w-75">
+            <form action="javascript:void(0)">
+              <hr />
+              <div class="mb-3">
+                <label for="name" class="align-items-center form-label">Name</label>
+                <input type="text" class="form-control" id="name" value="" placeholder="jon Arryn" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" value=""
+                  placeholder="abc@xyz.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile no.</label>
+                <input type="text" class="form-control" id="mobNo" value="" placeholder="7506405495" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="salary" class="form-label">Salary (Monthly)</label>
+                <input type="text" class="form-control" id="salary" value="" required>
+              </div>
+
+              <div style="display: flex;">
+                <p><b>Select Subjects</b> </p> 
+              </div>
+              <p>Hold down the Ctrl (windows) / 
+          Command (Mac) button to select multiple options</p>
+
+              {{!-- <div id="addSubject"> --}}
+                <select class="form-select" id="subject" aria-label="select subject" multiple>
+                  <option value="">Assign a subject</option>
+
+                </select>
+                {{!-- <br> --}}
+                {{!-- <select class="form-select" id="subject1" aria-label="select subject"> --}}
+                  {{!-- <option value="">Assign a subject</option> --}}
+              {{!-- </div> --}}
+              </select>
+              <hr />
+
+
+              <div class="row">
+
+
+                <div class="gender">
+                  <label for="gender" class="form-label">Gender :</label>
+                  <input type="radio" value="male" id="male" name="gender" checked />
+                  <label for="male" class="radio">Male</label>
+                  <input type="radio" value="female" id="female" name="gender" />
+                  <label for="female" class="radio">Female</label>
+                </div>
+                <div class="mt-3">
+                  <label for="birthday">Birthday:</label>
+                  <input class="my-3 form-control" type="date" id="birthday" name="birthday">
+                </div>
+
+              </div>
+
+
+              <div class="d-flex justify-content-evenly">
+                <input class="btn btn-primary mx-auto rounded-pill bg-success" type="reset" value="reset" id="resetbtn"
+                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Empty the form">
+
+                <input class="btn btn-primary mx-auto rounded-pill bg-success" type="submit" value="Add teacher info"
+                  id="addTeacher" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add details">
+
+
+              </div>
+              <div id="loadingDiv" style="display: none;">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                </span> Processing..
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="d-flex align-items-center img-fluid col-sm-12 col-md-4 col-lg-6">
+          <img class="d-block mx-auto" src="/image/teacherAddition.gif">
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+  {{>footers}}
+</body>
+<script src="/js/teacher.js"></script>
+
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {{>bootstrapAndBasicHeader}}
+  <link rel="stylesheet" href="/css/teacher_list.css" />
+
+</head>
+
+<body>
+  {{>headers}}
+
+
+
+  <div class="mx-5">
+
+    <div class="row">
+      <h2 class="col-3">Teacher list</h2>
+      <button type="button" class="btn pb-3" data-bs-toggle="tooltip" data-bs-placement="right"
+        title="Create a new teacher">
+        <a href="/admin/teacher" target="_blank"><i class="fa fa-plus-circle col-4"></i><b> Add teacher</b></a>
+
+      </button>
+    </div>
+    <div class="mx-5 mb-3" style="height:500px; overflow-y: auto;">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th scope="col" class="text-right">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col" class="text-right">mobile</th>
+            <th scope="col">email</th>
+            <th scope="col" class="text-right">salary</th>
+            <th scope="col" class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {{#each teachers}}
+          <tr style="height: 50px;">
+            <th scope="row" class="col-1 text-right">{{id}}</th>
+            <td class="col-2 text-left">{{name}}</td>
+            <td class="col-1 text-right">{{mobile}}</td>
+            <td class="col-2 text-center">{{email}}</td>
+            <td class="col-1 text-right">{{salary}}</td>
+            {{!-- <td style="width: 16.66%">{{date_of_birth}}</td> --}}
+            <td style="width: 25%">
+              <div class="row text-center">
+                <div class="d-flex justify-content-evenly">
+                  <div class="col-4">
+
+                    <button class="btn text-white btn-primary" type="button" class="btn pb-3" data-bs-toggle="modal"
+                      data-bs-target="#showTeacher" data-bs-id={{id}} data-bs-name="{{name}}" data-bs-email={{email}}
+                      data-bs-mobile={{mobile}} data-bs-salary={{salary}}>
+                      <p>Show</p>
+                    </button>
+                  </div>
+                  <div class="col-4">
+
+                    <button class="btn text-white btn-warning" type="button" class="btn pb-3" data-bs-toggle="modal"
+                      data-bs-target="#editTeacher" data-bs-id={{id}} data-bs-name="{{name}}" data-bs-email={{email}}
+                      data-bs-mobile={{mobile}} data-bs-salary={{salary}} data-bs-dob={{date_of_birth}}>
+                      <p>Edit</p>
+                    </button>
+                  </div>
+                  <div class="col-4">
+
+                    <button class="btn text-white btn-danger" type="button" class="btn pb-3" data-bs-toggle="modal"
+                      data-bs-target="#deleteTeacher" data-bs-id={{id}} data-bs-name="{{name}}"
+                      data-bs-mobile={{mobile}}>
+                      <p>Delete</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+
+      <div class="d-flex align-items-center">
+        {{#ifZero teachers.length}}
+        {{/ifZero}}
+      </div>
+
+    </div>
+  </div>
+
+
+
+  {{!-- Show teacher details modal --}}
+  <div class="modal fade" id="showTeacher" tabindex="-1" aria-labelledby="showTeacher" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <p class="name"></p>
+            </div>
+            <div class="mb-3">
+              <p class="mobile"></p>
+            </div>
+            <div class="mb-3">
+              <p class="email"></p>
+            </div>
+            <div class="mb-3">
+              <p class="salary"></p>
+            </div>
+            <hr>
+            <h3>Subjects assigned</h3>
+            <ul id="subjectList" class="list-group">
+            </ul>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {{!-- Edit teacher details modal --}}
+  <div class="modal fade" id="editTeacher" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="editTeacher" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id=""></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{!-- <div class="container w-75"> --}}
+            <form action="javascript:void(0)">
+              <input type="hidden" name="editId" id="editId" value="">
+              <div class="mb-3">
+                <label for="name" class="align-items-center form-label">Name</label>
+                <input type="text" class="form-control" id="editName" value="" placeholder="jon Arryn">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="editEmail" value="" placeholder="abc@xyz.com" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile no.</label>
+                <input type="text" class="form-control" id="editMobNo" value="" placeholder="7506405495">
+              </div>
+
+              <div class="mb-3">
+                <label for="salary" class="form-label">Salary (Monthly) <a role="button"
+                    class="btn btn-info popover-test" title="Will reflect the finance section"
+                    data-bs-content="Popover body content is set in this attribute.">i</a></label>
+                <input type="text" class="form-control" id="editSalary" value="">
+              </div>
+
+              <div style="display: flex;">
+                <p><b>Assign a new subject</b> </p>
+              </div>
+              <p>Hold down the Ctrl (windows) /
+                Command (Mac) button to select multiple options</p>
+
+              <button class="btn btn-danger mx-2 mb-3" id="editSubjectBtn">add subjects</button>
+              <select class="form-select" id="unassignedSubjects" aria-label="select subject" multiple disabled>
+                <option value="">Assign a subject</option>
+
+              </select>
+              
+              <hr />
+
+              <div class="row">
+
+
+                {{!-- <div class="gender">
+                  <label for="gender" class="form-label">Gender :</label>
+                  <input type="radio" value="male" id="male" name="gender" checked />
+                  <label for="male" class="radio">Male</label>
+                  <input type="radio" value="female" id="female" name="gender" />
+                  <label for="female" class="radio">Female</label>
+                </div> --}}
+                {{!-- <div class="mt-3">
+                  <label for="birthday">Birthday:</label>
+                  <input class="my-3 form-control" type="date" id="editBirthday" name="birthday">
+                </div> --}}
+
+              </div>
+
+              <div id="loadingDiv" style="display: none;">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                </span> Processing..
+              </div>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="editTeacherSaveRecord" class="btn btn-primary">Save changes</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    {{!-- Delete teacher details modal --}}
+    <div class="modal fade" id="deleteTeacher" tabindex="-1" aria-labelledby="deleteTeacher" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete teacher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" class="form-control" id="deleteMobileInputHidden" value="" placeholder="">
+            <div class="mb-3"">
+              <p>You need to confirm that you are going to delete <i> teacher</i>
+              <p class=" deleteName">
+              </p>
+              whose mobile number is <p class="deleteMobile" style="color: red"></p>please retype the mobile number in
+              below box</p>
+              <input type="text" class="form-control border border-danger" id="deleteMobileInput" value=""
+                placeholder="">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="deleteTeacherBtn">Confirm delete</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>footers}}
+</body>
+<script src="/js/teacher_list.js"></script>
+
+</html>

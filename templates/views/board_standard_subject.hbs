@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>bootstrapAndBasicHeader}}
+    <link rel="stylesheet" href="/css/board_standard_subject.css" />
+
+</head>
+
+<body>
+    {{>headers}}
+
+    <div class="mt-3 container-fluid">
+        <div class="row">
+
+
+
+            {{!-- Board --}}
+            <div class="d-block mx-auto p-5 align-middle justify-content-around col-sm-12 col-md-12 col-lg-6">
+
+
+                <div class="p-2 border border-3 boxShadow rounded">
+
+                    <div class="d-flex justify-content-around">
+                        <h4 class=""><u>Board list</u></h4>
+                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#addBoard"><i class="fa fa-plus-circle"></i>
+                        </button>
+
+                    </div>
+                    <div class="my-3 container-fluid" style="height:300px; overflow-y: auto;">
+                        <div class="row">
+                            <table class="table align-middle col-12">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-2 text-right">Id</th>
+                                        <th scope="col" class="col-4  text-center">Board</th>
+
+                                        <th scope="col" class="col-4 text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {{#each boards}}
+                                    <tr style="height: 50px;">
+                                        <th scope="row" class="col-2 text-right">{{id}}</th>
+                                        <td class="col-4  text-center">{{shortForm}}</td>
+
+                                        <td class="col-4 text-center">
+                                            {{!-- <div class="row"> --}}
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="col-4">
+                                                        <button class="btn text-white btn-warning" type="button"
+                                                            class="btn pb-3" data-bs-toggle="modal"
+                                                            data-bs-target="#editBoard" data-bs-id="{{id}}"
+                                                            data-bs-shortName="{{shortForm}}"
+                                                            data-bs-fullName="{{fullForm}}">
+                                                            <p>Edit</p>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-4">
+
+                                                        <button class="btn text-white btn-danger" type="button"
+                                                            class="btn pb-3" data-bs-toggle="modal"
+                                                            data-bs-target="#deleteMiscellaneous" data-bs-id={{id}}
+                                                            data-bs-name="{{shortForm}}" data-bs-delete="board">
+                                                            <p>Delete</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                {{!--
+                                            </div> --}}
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            {{#ifZero boards.length}}
+                            {{/ifZero}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            {{!-- Standard --}}
+            <div class="d-block mx-auto p-5 align-middle justify-content-around col-sm-12 col-md-12 col-lg-6">
+
+
+                <div class="p-2 border border-3 boxShadow rounded">
+
+                    <div class="d-flex justify-content-around">
+                        <h4 class=""><u>Standard list</u></h4>
+                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#addStandard"><i class="fa fa-plus-circle"></i>
+                        </button>
+
+                    </div>
+                    <div class="my-3 container-fluid" style="height:300px; overflow-y: auto;">
+                        <div class="row">
+                            <table class="table align-middle col-12">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-2 text-right">Id</th>
+                                        <th scope="col" class="col-4  text-center">Standard</th>
+
+                                        <th scope="col" class="col-4 text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {{#each standards}}
+                                    <tr style="height: 50px;">
+                                        <th scope="row" class="col-2 text-right">{{id}}</th>
+                                        <td class="col-4  text-center">{{name}}</td>
+
+                                        <td class="col-4 text-center">
+                                            {{!-- <div class="row"> --}}
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="col-4">
+                                                        <button class="btn text-white btn-warning" type="button"
+                                                            class="btn pb-3" data-bs-toggle="modal"
+                                                            data-bs-target="#editStandardSubject" data-bs-id="{{id}}"
+                                                            data-bs-name="{{name}}" data-bs-edit="standard">
+                                                            <p>Edit</p>
+                                                        </button>
+                                                    </div>
+                                                    <div class="col-4">
+
+                                                        <button class="btn text-white btn-danger" type="button"
+                                                            class="btn pb-3" data-bs-toggle="modal"
+                                                            data-bs-target="#deleteMiscellaneous" data-bs-id={{id}}
+                                                            data-bs-name="{{name}}" data-bs-delete="standard">
+                                                            <p>Delete</p>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                {{!--
+                                            </div> --}}
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            {{#ifZero standards.length}}
+                            {{/ifZero}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        {{!-- Subject --}}
+        <div class="d-block mx-auto p-5 align-middle justify-content-around col-sm-12 col-md-12 col-lg-8">
+
+
+            <div class="p-2 border border-3 boxShadow rounded">
+
+                <div class="d-flex justify-content-around">
+                    <h4 class=""><u>Subject list</u></h4>
+                    <button class="btn btn-outline-success btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#addSubject"><i class="fa fa-plus-circle"></i>
+                    </button>
+
+                </div>
+                <div class="my-3 container-fluid" style="height:300px; overflow-y: auto;">
+                    <div class="row">
+                        <table class="table align-middle col-12">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col-2 text-right">Id</th>
+                                    <th scope="col" class="col-4  text-center">Name</th>
+
+                                    <th scope="col" class="col-6 text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{#each subjects}}
+                                <tr style="height: 50px;">
+                                    <th scope="row" class="col-2 text-right">{{id}}</th>
+                                    <td class="col-4  text-center">{{name}}</td>
+
+                                    <td class="col-6 text-center">
+                                        {{!-- <div class="row"> --}}
+                                            <div class="d-flex justify-content-around">
+
+                                                <div class="col-3">
+
+                                                    <button class="btn text-white btn-primary" type="button"
+                                                        class="btn pb-3" data-bs-toggle="modal"
+                                                        data-bs-target="#showTeacher" data-bs-id={{id}}>
+                                                        <p>teachers</p>
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <button class="btn text-white btn-warning" type="button"
+                                                        class="btn pb-3" data-bs-toggle="modal"
+                                                        data-bs-target="#editStandardSubject" data-bs-id="{{id}}"
+                                                        data-bs-name="{{name}}" data-bs-edit="subject">
+                                                        <p>Edit</p>
+                                                    </button>
+                                                </div>
+                                                <div class="col-3">
+
+                                                    <button class="btn text-white btn-danger" type="button"
+                                                        class="btn pb-3" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteMiscellaneous" data-bs-id={{id}}
+                                                        data-bs-name="{{name}}" data-bs-delete="subject">
+                                                        <p>Delete</p>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            {{!--
+                                        </div> --}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        {{#ifZero standards.length}}
+                        {{/ifZero}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{>footers}}
+
+
+    {{!-- Add new board modal --}}
+
+    <div class="modal fade" id="addBoard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="addBoardLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBoardLabel">Add board</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post" name="boardForm">
+                    <div class="modal-body">
+
+                        <div class="">
+                            <label for="newBoardShortName" class="align-items-center form-label">Short form</label>
+                            <input type="text" class="form-control" id="newBoardShortName" value=""
+                                placeholder="ICSE / SSC / UPPSC" required>
+                            <label for="newBoardFullName py-2" class="align-items-center form-label">Full form</label>
+                            <input type="text" class="form-control" id="newBoardFullName" value=""
+                                placeholder="Central Board of Secondary Education" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="addBoard()">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- Add new standard modal --}}
+
+    <div class="modal fade" id="addStandard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="addStandardLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addStandardLabel">Add standard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post" name="standardForm">
+                    <div class="modal-body">
+
+                        <div class="">
+                            <label for="newStandardName" class="align-items-center form-label">Standard name</label>
+                            <input type="text" class="form-control" id="newStandardName" value=""
+                                placeholder="e.g: arts, 7" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="addStandard()">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- Add new subject modal --}}
+
+    <div class="modal fade" id="addSubject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="addSubjectLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSubjectLabel">Add subject</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post" name="subjectForm">
+                    <div class="modal-body">
+
+                        <div class="">
+                            <label for="newSubjectName" class="align-items-center form-label">Subject name</label>
+                            <input type="text" class="form-control" id="newSubjectName" value=""
+                                placeholder="e.g: arts, biology" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="addSubject()">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- Show subject teachers modal --}}
+    <div class="modal fade" id="showTeacher" tabindex="-1" aria-labelledby="showTeacher" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Teachers:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <ol id="teacherList" class="list-group-numbered">
+                        </ol>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{!-- Edit board details modal --}}
+    <div class="modal fade" id="editBoard" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editBoard" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{!-- <div class="container w-75"> --}}
+                        <form action="javascript:void(0)">
+                            <input type="hidden" name="editId" id="editId" value="">
+
+                            <div class="mb-3">
+                                <label for="editBoardShortName" class="align-items-center form-label">short form</label>
+                                <input type="text" class="form-control" id="editBoardShortName" value=""
+                                    placeholder="ex: ICSE" required>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="editBoardFullName" class="align-items-center form-label">full form</label>
+                                <input type="text" class="form-control" id="editBoardFullName" value=""
+                                    placeholder="ex: Indian Certificate of Secondary Education">
+                            </div>
+
+                            <hr />
+
+
+                            <div id="loadingDiv" style="display: none;">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                                </span> Processing..
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="editBoardSaveRecord" class="btn btn-primary">Save changes</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    {{!-- Edit standard /subject details modal --}}
+
+    <div class="modal fade" id="editStandardSubject" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editStandardSubject" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{!-- <div class="container w-75"> --}}
+                        <form action="javascript:void(0)">
+                            <input type="hidden" name="editId" id="editId" value="">
+
+                            <div class="mb-3">
+                                <label for="editStandardSubjectName" class="align-items-center form-label">name</label>
+                                <input type="text" class="form-control" id="editStandardSubjectName" value=""
+                                    placeholder="ex: 6,9, arts" required>
+                            </div>
+
+                            <hr />
+
+
+                            <div id="loadingDiv" style="display: none;">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                                </span> Processing..
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="editStandardSubjectSaveRecord" class="btn btn-primary"
+                            onclick="EditStandardSubjectRecord()">Save
+                            changes</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    {{!-- Delete board / standard / subject modal --}}
+    <div class="modal fade" id="deleteMiscellaneous" tabindex="-1" aria-labelledby="deleteMiscellaneous"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="deleteIdInputHidden" value="" placeholder="">
+                    <input type="hidden" class="form-control" id="deleteNameInputHidden" value="" placeholder="">
+                    <div class="mb-3"">
+              <p>You need to confirm that you are going to <p class=" modal-title">
+                        </p></i>
+                        <p class=" deleteName" style="color: red">
+                        </p>
+                        whose class id is <p class="deleteId"></p>please retype the class name in below box</p>
+                        <input type="text" class="form-control border border-danger" id="deleteNameInput" value=""
+                            placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deleteRecord()">Confirm
+                        delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/board_standard_subject.js"></script>
+
+</html>

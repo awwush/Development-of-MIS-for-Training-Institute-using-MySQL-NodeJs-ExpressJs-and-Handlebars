@@ -1,0 +1,37 @@
+body {
+    background-image: url(/image/topper-bg.svg);
+    /* for responsive bg-image */
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+
+.float-left-child {
+    float: left;
+}
+
+.topper-logo {
+    padding: 80px 0px;
+}
+.topper-logo img {
+    width: 125%;
+    height: 125%;
+}
+
+.topper-form {
+    padding-left: 80px;
+}
+
+form .btn {
+    background-color: rgb(100, 161, 201);
+    color: white;
+    margin-top: 8px;
+}
+
+form .btn:hover {
+    background-color: #92B9FC;
+    color: white;
+}

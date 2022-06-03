@@ -1,0 +1,70 @@
+.nav-item {
+    /* background: radial-gradient(50% 50% at 50% 50%, rgba(239, 157, 112, 0.19) 0%,
+     rgba(151, 223, 209, 0.770833) 70.31%, rgba(139, 191, 181, 0) 100%); */
+     display: block;
+     background-color: white;
+     border-radius: 7px;
+     margin: 3px;
+     font-weight: bold;
+     font-size: 20px;
+}
+
+.btn {
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 10px; /* Some padding */
+    font-size: 12px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+.featureRowAdmin {
+    background-color:white;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.sidebarnav {
+ 
+}
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+}

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester");
+
+body {
+  background-image: linear-gradient(#fdd692, #22deb1);
+}
+
+.cursive {
+  font-family: "Pinyon Script", cursive;
+}
+
+.sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.block {
+  display: block;
+}
+
+.underline {
+  border-bottom: 1px solid #92b9fc;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.pm-empty-space {
+  height: 40px;
+  width: 100%;
+}
+
+.topper-pic-container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  background-color: #92b9fc;
+  padding: 30px;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.outer-border {
+  width: 794px;
+  height: 594px;
+  position: absolute;
+  left: 50%;
+  margin-left: -397px;
+  top: 50%;
+  margin-top: -297px;
+  border: 2px solid #fff;
+}
+
+.inner-border {
+  width: 730px;
+  height: 530px;
+  position: absolute;
+  left: 50%;
+  margin-left: -365px;
+  top: 50%;
+  margin-top: -265px;
+  border: 2px solid #fff;
+}
+
+.topper-container-border {
+  position: relative;
+  width: 720px;
+  height: 520px;
+  padding: 0;
+  border: 1px solid #e1e5f0;
+  background-color: rgba(255, 255, 255, 1);
+  background-image: none;
+  left: 50%;
+  margin-left: -360px;
+  top: 50%;
+  margin-top: -260px;
+}
+
+.topper-container-block {
+  width: 650px;
+  height: 200px;
+  position: relative;
+  left: 50%;
+  margin-left: -325px;
+  top: 70px;
+  margin-top: 0;
+}
+
+.topper-container-title {
+  position: relative;
+  top: 30px;
+  color: #fdd692;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+.topper-container-body {
+  padding: 7px;
+}
+
+.topper-name-text {
+  font-size: 20px;
+}
+
+.topper-earned {
+  margin: 15px 0 20px;
+}
+.topper-earned-text {
+  font-size: 22px;
+}
+
+.topper-marks-text {
+  font-size: 15px;
+}
+
+.topper-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  border: calc(8px + 0.2vw) solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background-size: cover;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 30%;
+  background-image: linear-gradient(#f9f047, #0fd850);
+}

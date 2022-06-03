@@ -1,0 +1,1 @@
+This folder shall only contain route for different paths

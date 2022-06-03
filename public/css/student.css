@@ -1,0 +1,49 @@
+.nav-item {
+  background-color: aqua;
+}
+
+.rightCircle {
+  position: absolute;
+  clip-path: circle(50.0% at 95% 50%);
+  right: 0px;
+  height: 150px;
+  width: 150px;
+  background-color: #22DEB1;
+  /* border-radius: 50%; */
+}
+
+.leftCircle {
+  position: absolute;
+  clip-path: circle(50.0% at 0 50%);
+  left: 0px;
+  bottom: 100px;
+  height: 75px;
+  width: 75px;
+  background-color: #92B9FC;
+  /* border-radius: 50%; */
+}
+
+.the-legend {
+  border-style: none;
+  border-width: 0;
+  /* font-size: 14px; */
+  /* line-height: 20px; */
+  margin-bottom: 0;
+  width: auto;
+  height: 100%;
+  padding: 0 10px;
+  /* border: 1px solid #92B9FC; */
+}
+.the-fieldset {
+  /* border: 1px solid #22DEB1; */
+  padding: 10px;
+}
+
+/* input[type=reset] {
+  color: red;
+} */
+
+.pulse:hover{
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}

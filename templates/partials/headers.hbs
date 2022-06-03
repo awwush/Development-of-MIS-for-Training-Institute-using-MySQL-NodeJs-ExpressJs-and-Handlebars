@@ -1,0 +1,83 @@
+{{!--
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> --}}
+
+<style>
+    .btn:hover {
+        opacity: 0.5;
+        background-color: #F9F9F9;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        cursor: pointer;
+    }
+
+
+    .logout:hover {
+        color: red;
+        cursor: pointer;
+    }
+</style>
+
+
+<header class="navbar navbar-light bg-light">
+    <div class="row container-fluid">
+
+
+        <div class="col-lg-4 col-sm-12 text-left">
+            <i class="fa fa-arrow-left" onclick="history.back()" style="font-size:24px"></i>
+        </div>
+        <div class="col-lg-4 col-sm-12 text-center">
+            <a href="/sendToDashboard">
+                <img class="logo" src="/image/logo-with-name.png" alt="Brand-logo">
+            </a>
+        </div>
+
+        <div id="userControl" class="col-lg-4 col-sm-12 d-flex justify-content-center btns">
+            <div>
+                {{!-- <img src="/icons/bell-solid.svg" alt="" width="45" class="btn me-2 fw-bold"
+                    style="color: #008AC6;"></button> --}}
+
+                <div class="dropdown">
+                    <img src="/icons/user-solid.svg" alt="Profile" width="25">
+                    <div class="dropdown-content">
+                        <p style="font-weight: bold;">Hello, {{values.name}}</p>
+                        <p style="font-weight: bold;">{{values.email}}</p>
+                        <p id="profileBtn" style="font-weight: bold;">Profile</p>
+                        <p class="logout" style="font-weight: bold;">Sign Out</p>
+
+                    </div>
+
+                    <button id="logoutBtn" class="btn "><img src="/icons/logout.png" alt="" width="45"
+                            class="btn me-2 fw-bold" style="color: #008AC6;">
+
+                    </button>
+                    <div id="loadingDiv" style="display: none;">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                        </span> Processing..
+                    </div>
+                </div>
+            </div>
+
+            <script src="/js/header.js"></script>
+</header>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>bootstrapAndBasicHeader}}
+    <link rel="stylesheet" href="/css/dashboard.css" />
+</head>
+
+<body>
+
+    {{!-- Header --}}
+    {{>headers}}
+    {{!-- welcome to you dashboard {{user}} --}}
+    <main>
+        <div class="container-fluid" style="background-color: #E7ECEB;">
+
+            {{!-- Admin nav bar --}}
+
+            <nav class="d-flex justify-content-center mb-3 navbar">
+
+                {{!-- Id creation --}}
+                <div class="nav-item dropdown ps-4 pe-4 pt-2">
+                    <p class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Id creation
+                    </p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/admin/student">Student</a></li>
+                        <li><a class="dropdown-item" href="/admin/teacher">Teacher</a></li>
+                    </ul>
+                </div>
+
+
+                {{!-- Utilities --}}
+                {{!-- <div class="nav-item dropdown ps-4 pe-4 pt-2">
+                    <p class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Utilities
+                    </p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Fees reminder</a></li>
+                        <li><a class="dropdown-item" href="#">Finance</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Reports</a></li>
+                    </ul>
+                </div> --}}
+
+
+                {{!-- Work --}}
+                <div class="nav-item dropdown ps-4 pe-4 pt-2">
+                    <p class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Work
+                    </p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/admin/board-standard-subject">Miscellaneous</a></li>
+                        {{!-- <li><a class="dropdown-item" href="#">Birthday wish</a></li> --}}
+                    </ul>
+                </div>
+
+
+                {{!-- Classes --}}
+                <div class="nav-item dropdown ps-4 pe-4 pt-2">
+                    <p class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Classes
+                    </p>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{!-- <li><a class="dropdown-item" href="#">Attendance</a></li> --}}
+                        {{!-- <li>
+                            <hr class="dropdown-divider">
+                        </li> --}}
+                        <li><a class="dropdown-item" href="/admin/class">Add class</a></li>
+
+                    </ul>
+                </div>
+
+
+            </nav>
+
+            <div class="row">
+
+                <div class="d-flex justify-content-center">
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="column">
+                                <div class="card">
+                                    <a href="/admin/student/list">
+                                        <h1 id="studentCount"><img src="/image/loading.gif" alt="loading..."
+                                                width="50px">
+                                        </h1>
+                                    </a>
+                                    <p></p>
+                                    <p></p>
+                                    <p>Total students</p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="card bg-info">
+                                    <a href="/admin/teacher/list">
+                                        <h1 id="teacherCount"><img src="/image/loading.gif" alt="loading..."
+                                                width="50px">
+                                        </h1>
+                                    </a>
+                                    <p></p>
+                                    <p></p>
+                                    <p>Teacher strength</p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="card bg-warning">
+                                    <a href="/admin/class/list">
+                                        <h1 id="classCount"><img src="/image/loading.gif" alt="loading..." width="50px">
+                                        </h1>
+                                    </a>
+                                    <p></p>
+                                    <p></p>
+                                    <p>View your classes</p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="card bg-warning">
+                                    <a href="/admin/board-standard-subject">
+                                        <h2>Miscellaneous
+                                        </h2>
+                                    </a>
+                                    <p>Boards <br> Standards <br> Subjects</p>
+
+                                </div>
+                            </div>
+
+
+                            {{!-- Birthday list --}}
+                            {{!-- <div class="column">
+                                <div class="card bg-danger">
+                                    <h2>Birthday</h2>
+                                    <ol>
+                                        <li>Ranjit Pandey</li>
+                                        <li>Ayush Tiwari</li>
+                                        <li>Pratik Tiwari</li>
+                                    </ol>
+                                </div>
+                            </div> --}}
+
+                            <div class="col-4">
+                                <div class="card bg-light">
+                                    <div class="justify-content-around">
+                                        <h4 class=""><u>Invite</u></h4>
+                                        <button class="btn btn-success" data-bs-toggle="modal"
+                                            data-bs-target="#sendEmail"><i class="fa fa-envelope"></i>
+                                            <h4 class="">for the meet</h4>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{!-- <div class="column">
+                                <div class="card">
+                                    <a href="/admin/topper">
+                                        <h2>new topper</h2>
+                                    </a>
+                                    <img class="d-block mx-auto" src="/image/topper.gif" alt="topper image" width="100px" height="">
+                                </div>
+                            </div> --}}
+                        </div>
+
+
+
+                        {{!-- <div class="row">
+
+
+                            <div class="column">
+                                <div class="card bg-info">
+                                    <a href="/public/topper-information">
+                                        View topper
+                                    </a>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="card bg-warning">
+                                    <a href="/admin/teacher/attendance">
+                                        Teacher attendance
+                                    </a>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div> --}}
+
+
+
+
+
+
+                    </div>
+                </div>
+                <br>
+    </main>
+    <div class="m-5"></div>
+
+    <div class="modal fade" id="sendEmail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="sendEmailLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendEmailLabel">Invitation </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" method="post" name="mailForm">
+                    <div class="modal-body">
+
+                        <div class="mb-3">
+                            <select class="form-select mb-3" id="mailPrimary" aria-label="Select the primary recepient"
+                                title="Select the one to whom you need to send email to" required>
+                                <option value="allStudents">All the students</option>
+                                <option value="allTeachers">All the teachers</option>
+                                <option value="allParents">All the parents</option>
+                                {{!-- <option value="">to a class</option> --}}
+                            </select>
+                        </div>
+
+                        {{!-- TODO: Add secodary methods such as send email only to people of a particular class --}}
+
+                        {{!-- <div class="mb-3">
+                            <select class="form-select mb-3" id="mailSecondary"
+                                aria-label="Select the secondary recepient"
+                                title="Select the one to whom you need to send email to" disabled>
+                                <option value="allStudents">All the students</option>
+                                <option value="allTeachers">All the teachers</option>
+                                <option value="allParents">All the parents</option>
+                            </select>
+                        </div> --}}
+
+                        <div class="">
+                            <div class="mb-3">
+                                <label for="mailSubject" class="align-items-center form-label">Subject</label>
+                                <input type="text" class="form-control" id="mailSubject" value=""
+                                    placeholder="Monthly meet" required>
+                            </div>
+
+                            <div class="my-3">
+                                <label for="mailLink" class="align-items-center form-label">Meeting
+                                    link</label>
+                                <input type="text" class="form-control" id="mailLink" value=""
+                                    placeholder="https://meet.google.com/abc-def-ghi" required>
+                            </div>
+
+                            <div class="mt-3">
+                                <label for="mailBody py-2" class="align-items-center form-label">Body</label>
+                                <textarea class="form-control" id="mailBody" rows="3"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="sendMailButton">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{>footers}}
+</body>
+
+<script src="/js/dashboard.js"></script>
+
+</html>

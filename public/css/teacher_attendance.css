@@ -1,0 +1,159 @@
+.table {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sno {
+  width: 5%;
+}
+
+.name {
+  width: 20%;
+  text-align: center;
+}
+
+.attendance {
+  width: 5%;
+  text-align: center;
+}
+
+.behaviour {
+  width: 30%;
+  text-align: center;
+}
+
+.thead2 {
+  text-align: center;
+  width: 10%;
+}
+
+.ms-3.left {
+  text-align: left;
+}
+
+/* td .btn {
+  border-radius: 15px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: bold;
+  } 
+  
+  /* .attendance-buttons.p {
+     /* don't include bg: none
+    border: 2px solid #50eb79;
+    border-radius: 20px;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .attendance-buttons.a {
+    /* don't include bg: none
+    border: 2px solid red;
+    border-radius: 20px;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .normal {
+    background-color: white;
+  }
+  
+  button.p:hover {
+    background-color: #50eb79;
+    color: white;
+  }
+  
+  button.a:hover {
+    background-color: red;
+    color: white;
+  }
+  
+  .p.attendance-active {
+    background-color: #50eb79;
+    color: white;
+  }
+  
+  .a.attendance-active {
+    background-color: red;
+    color: white;
+  } */
+
+.emoji img {
+  cursor: pointer;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.emoji img:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fca192;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #22deb1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #22deb1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

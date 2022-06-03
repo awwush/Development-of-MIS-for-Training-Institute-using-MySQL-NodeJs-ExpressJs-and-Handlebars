@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {{>bootstrapAndBasicHeader}}
+  
+  <link rel="stylesheet" href="/css/teacher_attendance.css" />
+</head>
+
+<body>
+  {{>headers}}
+
+  <br><br>
+  <table class="table align-middle mb-0 table-hover">
+    <thead class="bg-light">
+      <tr>
+        <th rowspan="2" class="sno">#</th>
+        <th rowspan="2" class="name">Name</th>
+        <th colspan="1" class="attendance">Attendance</th>
+        <th colspan="8" class="behaviour">Behaviour</th>
+      </tr>
+      <tr>
+        <th class="thead2">Absent/Present</th>
+        <th class="thead2" colspan="2">Excellent</th>
+        <th class="thead2" colspan="2">Good</th>
+        <th class="thead2" colspan="2">Average</th>
+        <th class="thead2" colspan="2">Dull</th>
+      </tr>
+    </thead>
+    <tbody>
+      <form>
+      <tr>
+        <td><b>1</b></td>
+        <td>
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="student1" style="width: 45px; height: 45px"
+              class="rounded-circle" />
+            <div class="ms-3 left">
+              <p class="fw-bold mb-1">Ayush Tiwari</p>
+              <p class="text-muted mb-0">ayush.tiwari@aarushiclasses.in</p>
+            </div>
+          </div>
+        </td>
+        <td><label class="switch">
+          <input type="checkbox" value="Absent">
+          <span class="slider round"></span>
+        </label></td>
+        
+        <td>
+          <div class="radio">
+            <label><input type="radio" id="excellent" name="optradio" value="Excellent"></label>
+          </div>
+        </td>
+        <td class="emoji">
+          <img src="/image/excellent.gif" alt="excellent" style="width: 52px; height: 52px" class="rounded-circle"
+            id="excellent" />
+        </td>
+        <td>
+          <div class="radio">
+            <label><input type="radio" id="good" name="optradio" value="Good"></label>
+          </div>
+        </td>
+        <td class="emoji">
+          <img src="/image/good.gif" alt="good" style="width: 55px; height: 55px" class="rounded-circle" />
+        </td>
+        <td>
+          <div class="radio">
+            <label><input type="radio" id="average" name="optradio" value="Average"></label>
+          </div>
+        </td>
+        <td class="emoji">
+          <img src="/image/average.gif" alt="average" style="width: 65px; height: 65px" class="rounded-circle" />
+        </td>
+        <td>
+          <div class="radio">
+            <label><input type="radio" id="dull" name="optradio" value="Dull"></label>
+          </div>
+        </td>
+        <td class="emoji">
+          <img src="/image/dull.gif" alt="dull" style="width: 35px; height: 35px" class="rounded-circle" />
+        </td>
+      </tr>
+    </form>
+
+    <form>
+      <tr>
+        <td><b>2</b></td>
+        <td>
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="student1" style="width: 45px; height: 45px"
+              class="rounded-circle" />
+            <div class="ms-3 left">
+              <p class="fw-bold mb-1">Ayush Tiwari</p>
+              <p class="text-muted mb-0">ayush.tiwari@aarushiclasses.in</p>
+            </div>
+          </div>
+        </td>
+        <td><label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label></td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" class="custom-control-input" id="excellent" name="optradio" value="Excellent"></label>
+            </div>
+           
+          </td>
+          <td class="emoji">
+            <img src="/image/excellent.gif" alt="excellent" style="width: 52px; height: 52px" class="rounded-circle"
+              id="excellent" />
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" id="good" name="optradio" value="Good"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/good.gif" alt="good" style="width: 55px; height: 55px" class="rounded-circle" />
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" alt="student2" id="average" name="optradio" value="Average"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/average.gif" alt="average" style="width: 65px; height: 65px" class="rounded-circle" />
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" alt="student2" id="dull" name="optradio" value="Dull"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/dull.gif" alt="dull" style="width: 35px; height: 35px" class="rounded-circle" />
+          </td>
+      </tr>
+    </form>
+    
+    <form>
+      <tr>
+        <td><b>3</b></td>
+        <td>
+          <div class="d-flex align-items-center">
+            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="student1" style="width: 45px; height: 45px"
+              class="rounded-circle" />
+            <div class="ms-3 left">
+              <p class="fw-bold mb-1">Ayush Tiwari</p>
+              <p class="text-muted mb-0">ayush.tiwari@aarushiclasses.in</p>
+            </div>
+          </div>
+        </td>
+        <td><label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label></td>
+          
+          <td>
+            <div class="radio">
+              <label><input type="radio" id="excellent" name="optradio" value="Excellent"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/excellent.gif" alt="excellent" style="width: 52px; height: 52px" class="rounded-circle"
+              id="excellent" />
+          </td>
+          <td>
+            
+            <div class="radio">
+              <label><input type="radio" id="good" name="optradio" value="Good"></label>
+            </div>
+          </td>
+          
+          <td class="emoji">
+            <img src="/image/good.gif" alt="good"  style="width: 55px; height: 55px" class="rounded-circle" />
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" id="average" name="optradio" value="Average"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/average.gif" alt="average" style="width: 65px; height: 65px" class="rounded-circle" />
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" id="dull" name="optradio" value="Dull"></label>
+            </div>
+          </td>
+          <td class="emoji">
+            <img src="/image/dull.gif" alt="dull" style="width: 35px; height: 35px" class="rounded-circle" />
+          </td>
+      </tr>
+    <form>
+  </table>
+
+  <br><br>
+
+  {{>footers}}
+
+</body>
+
+</html>

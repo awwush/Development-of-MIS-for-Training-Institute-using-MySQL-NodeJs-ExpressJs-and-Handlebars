@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>bootstrapAndBasicHeader}}
+    <link rel="stylesheet" href="/css/student_list.css" />
+
+</head>
+
+<body>
+    {{>headers}}
+
+    <div class="mx-5">
+
+        <div class="row">
+            <h2 class="col-3">Student list</h2>
+            <button type="button" class="btn pb-3" data-bs-toggle="tooltip" data-bs-placement="right"
+                title="Create a new student">
+                <a href="/admin/student" target="_blank"><i class="fa fa-plus-circle col-4"></i><b> Add student</b></a>
+
+            </button>
+        </div>
+        <div class="mx-5 mb-3" style="height:500px; overflow-y: auto;">
+            <table class="table align-middle table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-right">Parent </th>
+                        <th scope="col" class="text-right">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="text-right">mobile</th>
+                        <th scope="col">email</th>
+                        <th scope="col" class="text-center">class</th>
+                        <th scope="col" class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each students}}
+                    <tr style="height: 50px;">
+                        <th scope="row" class="col-1 text-right">
+                            <div class="col-4">
+
+                                <button class="btn text-white btn-info" type="button" class="btn pb-3"
+                                    data-bs-toggle="modal" data-bs-target="#showParent" data-bs-id={{id}}
+                                    data-bs-name="{{name}}">
+                                    <p>i</p>
+                                </button>
+                            </div>
+                        </th>
+                        <th scope="row" class="col-1 text-right">{{id}}</th>
+                        <td class="col-1 text-left">{{name}}</td>
+                        <td class="col-1 text-right">{{mobile}}</td>
+                        <td class="col-2 text-center">{{email}} </td>
+                        <td>
+                            <div class="row text-center">
+                                <div class="d-flex justify-content-center">
+
+                                    <div class="col-6">
+
+                                        <button class="btn text-white btn-primary" type="button" class="btn pb-3"
+                                            data-bs-toggle="modal" data-bs-target="#addClass" data-bs-id={{id}}
+                                            data-bs-name="{{name}}" data-bs-boardId="{{board_id}}"
+                                            data-bs-standardId="{{standard_id}}">
+                                            <p>add</p>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+
+                                        <button class="btn text-white btn-secondary" type="button" class="btn pb-3"
+                                            data-bs-toggle="modal" data-bs-target="#removeFromClass" data-bs-id={{id}}
+                                            data-bs-name="{{name}}" data-bs-boardId="{{board_id}}"
+                                            data-bs-standardId="{{standard_id}}">
+                                            <p>remove</p>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            <div class="row text-center">
+                                <div class="d-flex justify-content-center">
+
+                                    <div class="col-3">
+
+                                        <button class="btn text-white btn-primary" type="button" class="btn pb-3"
+                                            data-bs-toggle="modal" data-bs-target="#showStudent" data-bs-id={{id}}
+                                            data-bs-name="{{name}}" data-bs-email={{email}} data-bs-mobile={{mobile}}
+                                            data-bs-boardName="{{board_name}}" data-bs-standardName="{{standard_name}}">
+                                            <p>Show</p>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-3">
+
+                                        <button class="btn text-white btn-warning" type="button" class="btn pb-3"
+                                            data-bs-toggle="modal" data-bs-target="#editStudent" data-bs-id={{id}}
+                                            data-bs-name="{{name}}" data-bs-email={{email}} data-bs-mobile={{mobile}}
+                                            data-bs-dob={{date_of_birth}} data-bs-boardName="{{board_name}}"
+                                            data-bs-standardName="{{standard_name}}">
+                                            <p>Edit</p>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-3">
+
+                                        <button class="btn text-white btn-danger" type="button" class="btn pb-3"
+                                            data-bs-toggle="modal" data-bs-target="#deleteStudent" data-bs-id={{id}}
+                                            data-bs-name="{{name}}" data-bs-mobile={{mobile}}>
+                                            <p>Delete</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+
+            </table>
+
+            <div class="d-flex align-items-center">
+                {{#ifZero students.length}}
+                {{/ifZero}}
+            </div>
+
+        </div>
+    </div>
+
+
+
+    {{!-- Show parent details modal --}}
+    <div class="modal fade" id="showParent" tabindex="-1" aria-labelledby="showParent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <p class="fatherName"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="motherName"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="mobile"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="email"></p>
+                        </div>
+                        <hr>
+                        {{!-- <h3>Classes enrolled</h3>
+                        <ul id="classList" class="list-group">
+                        </ul> --}}
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{!-- Show student details modal --}}
+    <div class="modal fade" id="showStudent" tabindex="-1" aria-labelledby="showStudent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <p class="name"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="mobile"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="email"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="boardName"></p>
+                        </div>
+                        <div class="mb-3">
+                            <p class="standardName"></p>
+                        </div>
+                        <hr>
+                        <h3>Classes enrolled</h3>
+                        <ul id="classList" class="list-group">
+                        </ul>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{!-- Edit student details modal --}}
+    <div class="modal fade" id="editStudent" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editStudent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{!-- <div class="container w-75"> --}}
+                        <form action="javascript:void(0)">
+                            <input type="hidden" name="editId" id="editId" value="">
+                            <div class="mb-3">
+                                <label for="name" class="align-items-center form-label">Name</label>
+                                <input type="text" class="form-control" id="editName" value="" placeholder="jon Arryn">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="editEmail" value=""
+                                    placeholder="abc@xyz.com" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile no.</label>
+                                <input type="text" class="form-control" id="editMobNo" value=""
+                                    placeholder="7506405495">
+                            </div>
+
+
+                            <hr />
+
+                            <div class="row">
+
+
+                                {{!-- <div class="gender">
+                                    <label for="gender" class="form-label">Gender :</label>
+                                    <input type="radio" value="male" id="male" name="gender" checked />
+                                    <label for="male" class="radio">Male</label>
+                                    <input type="radio" value="female" id="female" name="gender" />
+                                    <label for="female" class="radio">Female</label>
+                                </div> --}}
+                                {{!-- <div class="mt-3">
+                                    <label for="birthday">Birthday:</label>
+                                    <input class="my-3 form-control" type="date" id="editBirthday" name="birthday">
+                                </div> --}}
+
+                            </div>
+
+                            <div id="loadingDiv" style="display: none;">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                                </span> Processing..
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="editStudentSaveRecord" class="btn btn-primary">Save changes</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    {{!-- Add class details modal --}}
+    <div class="modal fade" id="addClass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="addClass" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id=""></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="javascript:void(0)">
+                        <input type="hidden" name="addClassId" id="addClassId" value="">
+                        <div id="classesHolder">
+
+                            {{!-- un-enrolled classes here, Dynamic randering here!! --}}
+
+                        </div>
+
+                        <div id="loadingDiv" style="display: none;">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                            </span> Processing..
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="addClassSaveRecord" class="btn btn-primary">Add</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- TODO: Remove class for a specific student --}}
+    <div class="modal fade" id="removeFromClass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="removeFromClass" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Enrolled classes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="javascript:void(0)">
+                        <input type="hidden" name="removeClassId" id="removeClassId" value="">
+                        <div id="classesAddHolder">
+
+                            {{!-- un-enrolled classes here, Dynamic randering here!! --}}
+
+                        </div>
+
+                        <div id="loadingDiv" style="display: none;">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                            </span> Processing..
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="removeClassSaveRecord" class="btn btn-danger">Remove</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- Delete student details modal --}}
+    <div class="modal fade" id="deleteStudent" tabindex="-1" aria-labelledby="deleteStudent" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="deleteMobileInputHidden" value="" placeholder="">
+                    <div class="mb-3"">
+              <p>You need to confirm that you are going to delete <i> student</i>
+              <p class=" deleteName">
+                        </p>
+                        whose mobile number is <p class="deleteMobile" style="color: red"></p>please retype the
+                        mobile number in
+                        below box</p>
+                        <input type="text" class="form-control border border-danger" id="deleteMobileInput" value=""
+                            placeholder="">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="deleteStudentBtn">Confirm delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {{>footers}}
+</body>
+
+<script src="/js/student_list.js"></script>
+
+</html>

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    margin : 0;
+    font-family: 'Roboto' ,  'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #E7ECEB;
+}
+a:hover{
+    text-decoration: none;
+  
+  }
+
+header {
+    position: static;
+    width: 100%;
+    height: 72px;
+    background-color: #F9F9F9;
+}
+header img {
+    position: relative;
+    left: 43.48%;
+    top: 0;
+    display: inline-block;
+}
+header a {
+    text-decoration: none;
+    position: absolute;
+    top: 17px;
+    color: #008AC6;
+    font-weight: bolder;
+    font-size: 20px;
+    display: inline-block;
+}
+header div{
+    padding: 3px 8px;
+    background-color: inherit;
+    border-radius: 8px;
+}
+
+header div:hover{
+    background-color: #008AF1;
+    color: #f9f9f9;
+    text-decoration: none;
+    
+}
+
+header a#sign-up {
+    left: 80%;
+}
+header a#sign-in {
+    left: 86%;
+}
+
+main .carousel-caption{
+    color: #ffc107;
+}
+
+.carousel-item img{
+    margin: 0 auto;
+}
+
+.carousel-control-next-icon {
+    background-image: url("../image/next.png");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("../image/prev.png");
+}
+
+section.dialogue p{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 100;
+    margin-top: 30px;
+}
+
+section.article{
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+}
+
+article {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 70%;
+    
+    margin : 0 auto;
+}
+
+article .row {
+    background-color: white;
+    display: flex;
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    text-align: left;
+}
+
+article .column h4 {
+    font-weight: bold;
+}
+
+article img {
+    width: 280px;
+    height: 250px;
+}
+
+footer {
+    width: 100%;
+    height: 162px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+
+footer .frow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+footer .fcolumn {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+footer .fcolumn ul{
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+footer .frow p {
+    font-size: 10px;
+    
+}
+
+
+@media screen and (max-width:1400px){
+    header a#sign-up {
+        left: 75%;
+    }
+
+    header img {
+        left : 35%
+    }
+}
+
+@media screen and (max-width:740px){
+    header a#sign-up {
+        left: 70%;
+    }
+
+    header img {
+        left : 35%
+    }
+
+    section.dialogue p{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:610px){
+    header a#sign-up {
+        left: 60%;
+    }
+    
+    header a#sign-in {
+        left: 80%;
+    }
+
+    header img {
+        left : 0;
+    }
+}
+@media screen and (max-width:499px){
+ 
+    header a {
+        font-size: 18px;
+    }
+
+    
+    
+}

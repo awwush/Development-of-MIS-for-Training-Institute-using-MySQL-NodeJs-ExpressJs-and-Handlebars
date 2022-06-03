@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {{>bootstrapAndBasicHeader}}
+  <link rel="stylesheet" href="/css/teacher_list.css" />
+
+</head>
+
+<body>
+  {{>headers}}
+
+
+
+  <div class="mx-5">
+
+    <div class="row">
+      <h2 class="col-3">Classes list</h2>
+      <button type="button" class="btn pb-3" data-bs-toggle="tooltip" data-bs-placement="right"
+        title="Create a new class">
+        <a href="/admin/class" target="_blank"><i class="fa fa-plus-circle col-4"></i><b> Add class</b></a>
+
+      </button>
+    </div>
+    <div class="mb-3 container-fluid" style="height:500px; overflow-y: auto;">
+      <div class="row">
+        <table class="table align-middle col-12">
+          <thead>
+            <tr>
+              <th scope="col" class="col-1 text-right">Id</th>
+              <th scope="col" class="col-1  text-center">class name</th>
+              <th scope="col" class="col-2  text-center">Teacher incharge</th>
+              <th scope="col" class="col-1  text-center">board</th>
+              <th scope="col" class="col-1  text-center">standard</th>
+              <th scope="col" class="col-1 text-center">subject</th>
+              <th scope="col" class="col-1 text-right">fees</th>
+              <th scope="col" class="col-* text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {{#each classes}}
+            <tr style="height: 50px;">
+              <th scope="row" class="col-1 text-right">{{id}}</th>
+              <td class="col-1  text-center">{{className}}</td>
+              <td class="col-2  text-center">{{teacherName}}</td>
+              <td class="col-1  text-center">{{boardsShort}}</td>
+              <td class="col-1  text-center">{{standard}}</td>
+              <td class="col-1  text-center">{{subject}}</td>
+              <td class="col-1 text-right">{{fees}}</td>
+              <td class="col-2 text-center">
+                {{!-- <div class="row"> --}}
+                  <div class="d-flex">
+                    <div class="col-4">
+
+                      <button class="btn text-white btn-info" type="button" class="btn pb-3" data-bs-toggle="modal"
+                        data-bs-target="#showStudents" data-bs-id="{{id}}" data-bs-name="{{className}}">
+                        <p>students</p>
+                      </button>
+                    </div>
+                    <div class="col-4">
+
+                      <button class="btn text-white btn-warning" type="button" class="btn pb-3" data-bs-toggle="modal"
+                        data-bs-target="#editClass" data-bs-id="{{id}}" data-bs-className="{{className}}"
+                        data-bs-teacherName="{{teacherName}}" data-bs-teacherId="{{teacherId}}" data-bs-fees="{{fees}}"
+                        data-bs-boardsShort="{{boardsShort}}" data-bs-boardsFull="{{boardsFull}}"
+                        data-bs-standard="{{standard}}" data-bs-subject="{{subject}}" data-bs-subjectId="{{subjectId}}">
+                        <p>Edit</p>
+                      </button>
+                    </div>
+                    <div class="col-4">
+
+                      <button class="btn text-white btn-danger" type="button" class="btn pb-3" data-bs-toggle="modal"
+                        data-bs-target="#deleteClass" data-bs-id={{id}} data-bs-className="{{className}}">
+                        <p>Delete</p>
+                      </button>
+                    </div>
+                  </div>
+                  {{!--
+                </div> --}}
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+
+        </table>
+      </div>
+      <div class="d-flex align-items-center">
+        {{#ifZero classes.length}}
+        {{/ifZero}}
+      </div>
+
+    </div>
+  </div>
+
+
+
+  {{!-- Show students details modal --}}
+  <div class="modal fade" id="showStudents" tabindex="-1" aria-labelledby="showStudents" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <hr>
+            <h3>Students enrolled</h3>
+            <ul id="studentsList" class="list-group">
+            </ul>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {{!-- Edit class details modal --}}
+  <div class="modal fade" id="editClass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="editClass" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id=""></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{!-- <div class="container w-75"> --}}
+            <form action="javascript:void(0)">
+              <input type="hidden" name="editId" id="editId" value="">
+
+              <div class="mb-3">
+                <label for="editClassName" class="align-items-center form-label">Class name</label>
+                <input type="text" class="form-control" id="editClassName" value=""
+                  placeholder="ex: class 6 - chemistry" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="viewBoard" class="form-label">Board</label>
+                <input type="email" class="form-control" id="viewBoard" value="" placeholder="CBSE" disabled>
+              </div>
+
+              <div class="mb-3">
+                <label for="viewStandard" class="form-label">Standard</label>
+                <input type="email" class="form-control" id="viewStandard" value="" placeholder="7th" disabled>
+              </div>
+
+              <input type="hidden" name="editSubjectId" id="editSubjectId" value="">
+              
+              <div class="mb-3">
+                <label for="viewSubject" class="form-label">Subject</label>
+                <input type="email" class="form-control" id="viewSubject" value="" placeholder="Biology" disabled>
+              </div>
+
+              <div class="mb-3">
+                <label for="editClassFees" class="align-items-center form-label">Fees in Rs. (per year)</label>
+                <input type="text" class="form-control" id="editClassFees" value="" placeholder="1000" required>
+              </div>
+
+              {{!--TODO: Change teacher --}}
+              <div style="display: flex;">
+                <button class="btn btn-danger mx-2 mb-3" id="editTeacherBtn">modify teacher</button>
+                {{!-- <label for="teachersList" class="align-items-center form-label">Choose Teacher</label> --}}
+                <select class="form-select mb-3" id="teachersList" aria-label="Select a teacher"
+                  title="Choose the faculty who teaches the above mentioned subject" required disabled>
+                  <option value="">Assign it to new teacher</option>
+
+                </select>
+                <button type="button" class="btn pb-3" data-bs-toggle="tooltip" data-bs-placement="right"
+                  title="Create a new teacher">
+                  <a href="/admin/teacher" target="_blank"><i class="fa fa-external-link"></i></a>
+
+                </button>
+              </div>
+
+
+
+
+
+              <hr />
+
+
+              <div id="loadingDiv" style="display: none;">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+                </span> Processing..
+              </div>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="editClassSaveRecord" class="btn btn-primary">Save changes</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    {{!-- Delete teacher details modal --}}
+    <div class="modal fade" id="deleteClass" tabindex="-1" aria-labelledby="deleteClass" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete class</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" class="form-control" id="deleteClassIdInputHidden" value="" placeholder="">
+            <input type="hidden" class="form-control" id="deleteClassNameInputHidden" value="" placeholder="">
+            <div class="mb-3"">
+              <p>You need to confirm that you are going to delete <i> class</i>
+              <p class=" deleteClassName" style="color: red">
+              </p>
+              whose class id is <p class="deleteClassId"></p>please retype the class name in below box</p>
+              <input type="text" class="form-control border border-danger" id="deleteNameInput" value=""
+                placeholder="">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="deleteClassBtn">Confirm delete</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{>footers}}
+</body>
+<script src="/js/class_list.js"></script>
+
+</html>

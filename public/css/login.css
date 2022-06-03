@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #e7eceb;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 72px;
+}
+
+header img {
+  position: relative;
+  left: 43.48%;
+  top: 0;
+}
+
+main .main-box {
+  background-color: #ffffff;
+  width: 82.09%;
+  height: 626px;
+  margin: 35px auto;
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-evenly;
+}
+
+main img {
+  width: 47.58%;
+  height: 93.13%;
+}
+
+main .login-box {
+  width: 35.84%;
+  height: 74.92%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+main .login-heading {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+main .login-heading aside {
+  position: relative;
+  top: 10px;
+}
+
+main .login-heading p {
+  margin-bottom: 0;
+}
+main .login-heading p.heading {
+  font-size: 21px;
+}
+
+main .login-heading .role-buttons {  
+  /* don't include bg: none  */
+  border: 2px solid #2642d5;
+  border-radius: 10px;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5px;
+  padding: 10px 20px;
+  cursor: pointer;
+} 
+.normal {
+  background-color: white;  
+}
+
+main .login-heading button:hover {
+  background-color: #2642d5;
+  color: white;
+
+}
+
+.role-active {
+  background-color: #2642d5;
+  color: white;
+}
+/* main .login-heading button.fill {
+  color: black;
+}
+
+main .login-heading button.fill:hover, .fill:focus{
+  background-color: #2ecc71;
+  color: white;
+} */ 
+
+main .login-heading p.role {
+  color: #2642d5;
+  font-size: 17px;
+}
+
+main .login-heading p.role:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+main .login-heading p span {
+  color: #008ac6;
+}
+
+main section.login-input {
+  width: 100%;
+  height: 100%;
+  background-color: #ebebeb;
+  border-radius: 10px;
+  padding: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+main section.login-input .login-border {
+  border-bottom: 0.5px solid #827878;
+  width: 85%;
+  margin: 0 auto;
+}
+main section.login-input form {
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+}
+
+#username,
+#password {
+  margin: 18px auto;
+  padding: 0px 10px;
+}
+
+#password {
+  margin-top: 0;
+  padding: 0px 10px;
+}
+
+main section.login-input input {
+  margin: auto;
+  width: 80.13%;
+  height: 30.66%;
+  border-radius: 10px;
+  border: none;
+  color: #767676;
+  background-color: #d7d6d6;
+  text-align: center;
+  font-weight: 900;
+}
+
+input:focus {
+  outline-style: solid;
+  outline-color: hsla(239, 100%, 50%, 0.3);
+  outline-width: 3.5px;
+}
+
+main section.login-input input[value="Login to rock on!"] {
+  background-color: #d52626;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+main section.login-input input[value="LOGIN"] {
+  background-color: #2642d5;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  height: 162px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+
+footer .frow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer .fcolumn {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+footer .fcolumn ul {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+}
+
+footer .frow p {
+  font-size: 10px;
+}

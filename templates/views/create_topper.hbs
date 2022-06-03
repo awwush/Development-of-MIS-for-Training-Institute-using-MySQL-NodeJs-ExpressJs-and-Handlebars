@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>bootstrapAndBasicHeader}}
+
+    <link rel="stylesheet" href="/css/create_topper.css" />
+</head>
+
+<body>
+    {{>headers}}
+
+    <br>
+    <br>
+
+    <div class="parent">
+        <div class="child float-left-child topper-form">
+            <div class="topper-form col-sm-11 col-lg-12 col-md-12">
+                <h2>Topper Details</h2>
+                <hr>
+                <form>
+
+                    <label for="class-name" class="form-label">Class</label>
+                    <div class="mb-3">
+                        <select class="form-select mb-3" id="classList" aria-label="Select a class"
+                            title="Choose the class from which topper belongs to" required>
+                            <option value="">Select a class</option>
+                        </select>
+                    </div>
+
+
+                    <label for="topper-name" class="form-label">Name</label>
+                    <div class="mb-3">
+                        <select class="form-select mb-3" id="studentList" aria-label="Select a Student"
+                            title="Choose the student who scored the maximum marks" required>
+                            <option value="">Select a Student</option>
+                        </select>
+                    </div>
+
+                    <label for="marks" class="form-label">Marks</label>
+                    <input class="form-control mb-3" type="number" id="receivedMarks"
+                        placeholder="Enter marks received..." min="0" required>
+
+                    <label for="out-of-marks" class="form-label">Out of</label>
+                    <input class="form-control mb-3" type="number" id="totalMarks" placeholder="Enter total marks..."
+                        min="1" required>
+
+                    <label for="upload" class="form-label">Upload Photo</label>
+                    <input class="form-control mb-3" type="file" id="topperImage" name="topperImage">
+
+                    <button type="submit" class="btn mb-3" id="saveTopper">Upload</button>
+                </form>
+                <br><br>
+
+            </div>
+        </div>
+        <div class="child float-left-child topper-logo">
+            <img src="/image/topper-logo.png" alt="topper logo">
+        </div>
+    </div>
+
+
+    {{>footers}}
+
+</body>
+<script src="/js/create_topper.js"></script>
+
+</html>

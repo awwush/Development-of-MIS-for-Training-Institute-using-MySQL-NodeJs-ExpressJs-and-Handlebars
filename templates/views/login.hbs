@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+	{{>bootstrapAndBasicHeader}}
+	<link rel="stylesheet" href="/css/login.css" />
+</head>
+
+<body>
+	<header>
+		<img src="/image/logo-with-name.png" alt="logo of the website" />
+	</header>
+
+	<main>
+		<div class="main-box">
+			<img src="/image/loginPage-imag.png">
+			<div class="login-box">
+				<div class="login-heading">
+					<p class="heading">Sign in as</p>
+					<button class="role-buttons normal role-active" id="admin" >Admin</button>
+					{{!-- <button class="role-buttons normal" id="student" >Student</button>
+					<button class="role-buttons normal" id="teacher" >Teacher</button> --}}
+					<aside>
+						<p>or <span><a href="/users/register">Sign up</a></span></p>
+					</aside>
+				</div>
+				
+				<section class="login-input">
+					<div class="login-border"></div>
+					<form action="javascript:void(0)">
+						<input type="email" id="username" placeholder="Username"  value="" required>
+						<input type="password" id="password" placeholder="Password" minlength="1" maxlength="64"
+							title="Cannot be empty" value="" required>
+						<input type="submit" id="loginBtn" value="LOGIN">
+						<br>
+						<span style="font-size:smaller"><a id="forgotPassword" onclick="forgot_Password()" href="javascript:void(0)"> Forgot Password?</a></span>
+						<div id="loadingDiv" style="display: none;">
+							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+							</span> Processing..
+						</div>
+					</form>
+					
+				</section>
+			</div>
+		</div>
+	</main>
+
+	{{>footers}}
+</body>
+<script src="/js/login.js"></script>
+
+</html>

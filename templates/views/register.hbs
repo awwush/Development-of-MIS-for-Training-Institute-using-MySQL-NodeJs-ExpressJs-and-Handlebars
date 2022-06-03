@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+	{{>bootstrapAndBasicHeader}}
+	<link rel="stylesheet" href="/css/register.css" />
+</head>
+
+<body>
+	<header>
+		<img src="/image/logo-with-name.png" alt="logo of the website" />
+	</header>
+	<main>
+		<div class="main-box">
+			<img src="/image/signup-img.png">
+			<div class="registeration-box">
+				<section>
+					<p>Sign up</p>
+					<aside>
+						<p>or <span><a href="/users/login"> Sign in</a></span></p>
+					</aside>
+				</section>
+				<div class="registeration-border"></div>
+				<div class="registeration-part">
+					<form action="javascript:void(0)">
+						<div>
+							<input type="text" id="name" class="short" placeholder="Admin's Name "
+								pattern="[A-Za-z]{1}[A-Za-z '.]+" title="Atleast 1 character" maxlength=50 required>
+							<input type="text" id="mobNo" class="short" placeholder="Institute's mob No." id="phoneNo"
+								pattern="[1-9]{1}[0-9]{9}" title="Mobile number i.e of 10 digits" required>
+						</div>
+						<input type="text" placeholder="Institute's Name" id="instituteName"
+							pattern="[A-Za-z0-9]{1}[A-Za-z0-9 '.]+" title="Mention institute name" maxlength=100
+							required>
+						<input type="email" placeholder="Institute's Email id" id="email" required>
+						<div>
+							<input type="text" class="short" placeholder="GST No / Pan number" id="id"
+								pattern="[A-Za-z0-9]+" minlength="10" maxlength="15" title="Pan card or gst number"
+								required>
+							<input type="text" class="short" placeholder="Aadhaar number" id="aadhaar" pattern="[0-9]+"
+								minlength="12" maxlength="12" title="12 digit number" required>
+						</div>
+						<input type="submit" id="registerBtn" value="Sign up">
+						<div id="loadingDiv" style="display: none;">
+							<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true">
+							</span> Processing..
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</main>
+
+	{{>footers}}
+</body>
+
+<script src="/js/register.js"></script>
+
+</html>
