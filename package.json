@@ -18,7 +18,8 @@
     "node-mailjet": "^3.3.4",
     "oracledb": "^5.3.0",
     "sequelize": "^6.15.0",
-    "validator": "^13.6.0"
+    "validator": "^13.6.0",
+    "nodemon": "^2.0.15"
   },
   "author": {
     "name": "TCET",
@@ -27,8 +28,5 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
   }
 }
