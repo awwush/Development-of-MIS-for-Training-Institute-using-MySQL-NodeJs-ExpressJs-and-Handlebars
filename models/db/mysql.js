@@ -14,15 +14,15 @@ const { Sequelize } = require('sequelize');
 
 /// Realtime database connection
 
-// const sequelize = new Sequelize('mis', 'CRUD', 'CRUD', {
-//     host: 'mis.c7zw0gnocfta.ap-south-1.rds.amazonaws.com', // the database is deleted as of 9 May 2022
-//     dialect: 'mysql',
-//     port: 3306,
-//     logging: false,
-// define: {
-//     freezeTableName: true,
-// }
-// });
+const sequelize = new Sequelize('mis', 'CRUD', 'CRUD', {
+    host: 'mis.c7zw0gnocfta.ap-south-1.rds.amazonaws.com', // the database is deleted as of 9 May 2022
+    dialect: 'mysql',
+    port: 3306,
+    logging: false,
+define: {
+    freezeTableName: true,
+}
+});
 
 async function authenticateConnection() {
     try {
