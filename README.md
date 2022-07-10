@@ -1,4 +1,4 @@
-## Management Information System(MIS) for Training Institute - BE Final Year Outhouse Project
+## Development of Management Information System(MIS) for Training Institute <br> BE Final Year Outhouse Project
 
 # Problem statement
 Often training institutes find it difficult to cater the needs of their stakeholders, so to overcome an MIS which will help to perform administrative chores and cover modules such as student performance, report to parents, attendance, course details. The application will help in overall administration of the training institute.
