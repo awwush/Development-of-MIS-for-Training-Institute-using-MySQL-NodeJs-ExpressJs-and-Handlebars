@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { Sequelize } = require('sequelize');
 
 /// Localhost connection
@@ -14,14 +16,14 @@ const { Sequelize } = require('sequelize');
 
 /// Realtime database connection
 
-const sequelize = new Sequelize('mis', 'CRUD', 'CRUD', {
-    host: 'mis.c7zw0gnocfta.ap-south-1.rds.amazonaws.com', // the database is deleted as of 9 May 2022
+const sequelize = new Sequelize('mis', process.env.db_username, process.env.db_password, {
+    host: process.env.db_url, 
     dialect: 'mysql',
     port: 3306,
     logging: false,
-define: {
+    define: {
     freezeTableName: true,
-}
+    }
 });
 
 async function authenticateConnection() {

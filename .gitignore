@@ -111,3 +111,6 @@ databasefiles/MIS_model_v2.mwb.bak
 
 # vs code workspace files
 .vs/
+
+# .env file
+.env
