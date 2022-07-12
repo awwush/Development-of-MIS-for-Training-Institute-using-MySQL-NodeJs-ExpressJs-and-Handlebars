@@ -9,6 +9,13 @@ b) Express.js
 c) Handlebars
 d) MySQL 
 
+# Watch Demo on YouTube
+Link: https://youtu.be/63MRWggurTM
+# Deployment 
+We have used Heroku which is platform as a service and provides 550 dyno hours per month. It provides https protocol support for deployment of hobby projects. Amazon RDS using MySQL community version to run our database.
+<br>
+Link: https://final-year-project-mis.herokuapp.com/
+
 # Screenshots
 <p align="center"><img src="https://user-images.githubusercontent.com/65806215/178144696-123b6a84-5ac6-46c6-8022-03953abc5360.png"></p>
 <p align="center">Figure 1: Registration screen for the administrator</p>
@@ -84,13 +91,6 @@ d) MySQL
 
 <p align="center"><img src="https://user-images.githubusercontent.com/65806215/178146156-44233e2a-da21-4bf7-9f80-962571e5e8b9.png"></p>
 <p align="center">Figure 25: Invitation view via e-mail</p>
-
-# Watch Demo on YouTube
-Link: https://youtu.be/63MRWggurTM
-# Deployment 
-We have used Heroku which is platform as a service and provides 550 dyno hours per month. It provides https protocol support for deployment of hobby projects. Amazon RDS using MySQL community version to run our database.
-<br>
-Link: https://final-year-project-mis.herokuapp.com/
 
 # Testing
 Mocha, which is a JavaScript test framework for Node.js programs is used to test backend API’s.
